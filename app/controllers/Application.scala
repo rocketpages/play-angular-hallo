@@ -7,7 +7,7 @@ import model.PreviewConfig
 object Application extends Controller {
   
   def index = Action {
-    Ok(views.html.index(PreviewConfig("Someone Special", "Fast and Furious", "The winning combination!")))
+    Ok(views.html.index(PreviewConfig("AngularJS", "Play Framework", "Add Hallo.js for the winning combination")))
   }
 
   def update = Action { request =>

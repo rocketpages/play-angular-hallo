@@ -16,15 +16,29 @@
     <script src='@routes.Assets.at("javascripts/hallo.js")' type="text/javascript"></script>
 </head>
 
+<style>
+    .editable:hover { background-color: yellow }
+</style>
+
 <body ng-controller="PreviewCtrl">
-    <h1 ng-init="previewConfig.name='@domainObject.name'" ng-model="previewConfig.name" hallo></h1>
-    <h3 ng-init="previewConfig.intro='@domainObject.intro'" ng-model="previewConfig.intro" hallo></h3>
-    <p ng-init="previewConfig.description='@domainObject.description'" ng-model="previewConfig.description" hallo></p>
+    <h1 class="editable" ng-init="previewConfig.name='@domainObject.name'" ng-model="previewConfig.name" hallo></h1>
+
+    <h3 class="editable" ng-init="previewConfig.intro='@domainObject.intro'" ng-model="previewConfig.intro" hallo></h3>
+
+    <p class="editable" ng-init="previewConfig.description='@domainObject.description'" ng-model="previewConfig.description" hallo></p>
 
     <button ng-click="updateProfile()">Launch the nukes</button>
 
-    <p>{{previewConfig.name}}</p>
-    <p>{{previewConfig.intro}}</p>
-    <p>{{previewConfig.description}}</p>
+    <div style="margin-top:2em;">
+        <fieldset>
+            <legend>Model</legend>
+            <p>{{previewConfig.name}}</p>
+
+            <p>{{previewConfig.intro}}</p>
+
+            <p>{{previewConfig.description}}</p>
+        </fieldset>
+    </div>
 </body>
+
 </html>
